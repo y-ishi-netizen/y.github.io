@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> My Portfolio </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-void: #050505;
+            --bg-panel: rgba(5, 5, 5, 0.92);
+            --bg-pill: #0a0a0a;
+            --border-dim: #1a1a1a;
+            --border-mid: #222222;
+            --border-bright: #2c2c2c;
+            --text-main: #f0f0f0;
+            --text-muted: #888888;
+            --text-dim: #555555;
+            --text-bg-light: #ffffff;
+            --accent-live: #00ff66;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-display: 'Alfa Slab One', serif;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            min-height: 100vh;
+            background-color: var(--bg-void);
+            font-family: var(--font-mono);
+            color: var(--text-main);
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            line-height: 1;
+        }
+
+        .left_side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 36px;
+            border-right: 1px solid var(--border-mid);
+            background-color: var(--bg-panel);
+        }
+
+        .right_side {
+            display: flex;
+            flex-direction: column;
+            padding: 32px 36px;
+        }
+
+        #medusa_stage {
+            flex: 1;
+            margin-top: 24px;
+            border: 1px solid var(--border-mid);
+            position: relative;
+        }
+
+
+        .sys_tag {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-dim);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            color: var(--text-dim);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .logo {
+            width: 58px;
+            height: auto;
+            transform: translateY(3px);
+        }
+
+        .jp_sub {
+            display: inline-block;
+            margin-bottom: 28px;
+            padding: 3px 10px;
+            background-color: var(--text-bg-light);
+            color: var(--bg-void);
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+        }
+
+        .terminal_bio {
+            padding: 16px 0;
+            border-top: 1px solid var(--border-mid);
+            border-bottom: 1px solid var(--border-mid);
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .terminal_bio .label {
+            color: var(--text-dim);
+        }
+
+        .terminal_bio .val {
+            color: var(--text-main);
+        }
+
+        .top_bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: fit-content;
+            margin-left: auto;
+            padding: 10px 24px;
+            border: 1px solid var(--border-bright);
+            border-radius: 999px;
+            background-color: var(--bg-pill);
+        }
+
+        .footer_meta {
+            padding-top: 12px;
+            border-top: 1px solid var(--border-dim);
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+        }
+
+        .footer_link {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            color: var(--text-dim);
+        }
+
+        .nav_item {
+            background: transparent;
+            border: none;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+
+        .home_nav,
+        .nav_item {
+            cursor: pointer;
+            transition: color 0.15s ease;
+        }
+
+        .home_nav:hover,
+        .home_nav.active,
+        .nav_item:hover,
+        .nav_item.active {
+            color: var(--text-main);
+        }
+
+        .alfa-slab-one-regular {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-style: normal;
+            background: repeating-linear-gradient(to bottom,
+                    #ffffff 0px,
+                    #ffffff 4px,
+                    var(--bg-void) 4px,
+                    var(--bg-void) 7px);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            .diamond {
+                display: none;
+            }
+
+            .diamond.active {
+                display: flex;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="left_side">
+        <div>
+            <div class="sys_tag">
+                <span>FUTURISTIC TEXT</span>
+            </div>
+
+            <div class="header">
+                <img src="logo.svg" alt="Y Logo" class="logo">
+                <h1 class="alfa-slab-one-regular home_nav" data-page="home">Y//</h1>
+            </div>
+
+            <div class="jp_sub">JAPANESE TEXT</div>
+
+            <div class="terminal_bio">
+                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
+                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
+                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
+            </div>
+        </div>
+
+        <div class="footer_meta">
+            <button class="nav_item footer_link">[ INSTRUCTIONS ]</button>
+            <br>
+            <button class="nav_item footer_link">[ CONTACT ]</button>
+            <br>
+            <button class="nav_item footer_link">[ SOCIALS ]</button>
+        </div>
+    </div>
+
+    <div class="right_side">
+        <nav class="top_bar">
+            <button class="nav_item" data-page="project1">PROJECT 1</button>
+            <button class="nav_item" data-page="project2">PROJECT 2</button>
+            <button class="nav_item" data-page="project3">PROJECT 3</button>
+            <button class="nav_item" data-page="project4">PROJECT 4</button>
+        </nav>
+
+        <div id="medusa_stage">
+            <div id="home" class="diamonds active"> Home content</div>
+            <div id="project1" class="diamonds"> Project 1 content</div>
+            <div id="project2" class="diamonds"> Project 2 content</div>
+            <div id="project3" class="diamonds"> Project 3 content</div>
+            <div id="project4" class="diamonds"> Project 4 content</div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const nav_items = document.querySelectorAll('[data-page]');
+
+    const viewing = document.querySelectorAll('.diamonds');
+
+</script>
+
+
+</html>
