@@ -29,7 +29,7 @@
         }
 
 
-        * {
+        *{
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -192,6 +192,15 @@
 
         .diamonds.active {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-panel);  
         }
     </style>
 
@@ -213,9 +222,9 @@
             <div class="jp_sub">科学使い</div>
 
             <div class="terminal_bio">
-                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
-                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
-                <p><span class="label">LABEL //</span> <span class="val">ABOUT</span></p>
+                <p><span class="label">NAME =</span> <span class="val">Matthew Somritjinda</span></p>
+                <p><span class="label">STATUS =</span> <span class="val">AI developer, Researcher</span></p>
+                <p><span class="label">CURRENT PROJECT(s) =</span> <span class="val">Bio Log, Bangboo, Morgana Bot</span></p>
             </div>
         </div>
 
@@ -237,7 +246,7 @@
         </nav>
 
         <div id="medusa_stage">
-            <div id="home" class="diamonds active"> Home content</div>
+            <div id="home" class="diamonds active"> Medusa Initializing... (coming soon)</div>
             <div id="project1" class="diamonds"> Project 1 content</div>
             <div id="project2" class="diamonds"> Project 2 content</div>
             <div id="project3" class="diamonds"> Project 3 content</div>
@@ -250,8 +259,21 @@
 <script>
 
     const nav_items = document.querySelectorAll('[data-page]');
-
     const viewing = document.querySelectorAll('.diamonds');
+
+nav_items.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetId = btn.dataset.page;
+
+        nav_items.forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+
+        viewing.forEach(panel => {
+            panel.classList.toggle('active', panel.id === targetId);
+        });
+    });
+});
+
 
 </script>
 
