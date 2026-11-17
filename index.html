@@ -202,6 +202,70 @@
             height: 100%;
             background-color: var(--bg-panel);  
         }
+
+        .project_shell {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            gap: 20px;
+        }
+
+        .panel_bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-mid);
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+        }
+
+        .status_live {
+            color: var(--accent-live);
+        }
+
+        .panel_title {
+            font-size: 1.55rem;
+            font-weight: 600;
+            margin: 14px 0 10px;
+            color: var(--text-main);
+        }
+
+        .panel_summary {
+            max-width: 65ch;
+            font-size: 0.84rem;
+            line-height: 1.75;
+            color: var(--text-muted);
+        }
+
+        .spec_row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .spec_card {
+            padding: 14px;
+            border: 1px solid var(--border-mid);
+            background-color: var(--bg-panel);
+        }
+
+        .spec_key {
+            font-size: 0.66rem;
+            letter-spacing: 0.14em;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+        }
+
+        .spec_val {
+            font-size: 0.8rem;
+            line-height: 1.55;
+            color: var(--text-main);
+        }
     </style>
 
 </head>
@@ -246,11 +310,148 @@
         </nav>
 
         <div id="medusa_stage">
-            <div id="home" class="diamonds active"> Medusa Initializing... (coming soon)</div>
-            <div id="project1" class="diamonds"> Project 1 content</div>
-            <div id="project2" class="diamonds"> Project 2 content</div>
-            <div id="project3" class="diamonds"> Project 3 content</div>
-            <div id="project4" class="diamonds"> Project 4 content</div>
+            <div id="home" class="diamonds active">Medusa Initializing... (coming soon)</div>
+
+            <div id="project1" class="diamonds">
+                <div class="project_shell">
+                    <div>
+                        <div class="panel_bar">
+                            <span>SENKU.AI</span>
+                            <span class="status_live">[COMPLETE]</span>
+                        </div>
+                        <h2 class="panel_title">Local RAG Architecture & Web Crawler</h2>
+                        <p class="panel_summary">
+                            I made a local RAG architecture that can ingest and store information from the web.
+                            The personality is based off of Senku Ishigami from the anime, Dr. Stone. It can answer questions about science and technology, as well as provide explanations and summaries of scientific concepts.
+                            It uses a web crawler to scrape data, which is then processed and stored in a vector database for quick retrieval.
+                            This is my first attempt at building a RAG architecture, and it was a great learning experience.
+                            I completed it in 16 days (08/13/2026 - 08/29/2026) and I continue to update it.
+                        </p>
+                        <div class="spec_row">
+                            <div class="spec_card">
+                                <div class="spec_key">WHAT I USED</div>
+                                <div class="spec_val">Python, ChromaDB, Ollama (mxbai-embed-large), Streamlit</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">INGESTION</div>
+                                <div class="spec_val">BeautifulSoup4, DDGS Search, robots.txt parser, hashlib MD5</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">FOR A DEEP LOOK</div>
+                                <a href="https://github.com/y-ishi-netizen/Senku.AI" target="_blank" rel="noopener" class="spec_val">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel_bar">
+                        <span>Y// Projects</span>
+                        <span>01 / 04</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project2" class="diamonds">
+                <div class="project_shell">
+                    <div>
+                        <div class="panel_bar">
+                            <span>MORGANA BOT</span>
+                            <span class="status_live">[Waiting for Hardware]</span>
+                        </div>
+                        <h2 class="panel_title">Self-Balancing Inverted Pendulum Robot</h2>
+                        <p class="panel_summary">
+                            I made a self balancing inverted pendulum robot that is based off of Morgana from the videogame, Persona 5 Royal.
+                            I used a custom PID controller to balance the robot using an IMU sensor fusion algorithm.
+                            This project is still in progress, as I am waiting for the hardware to arrive so that I can test and tune the controller.
+                            Updates will be on my Github page, which is linked below.
+                        </p>
+                        <div class="spec_row">
+                            <div class="spec_card">
+                                <div class="spec_key">WHAT I USED</div>
+                                <div class="spec_val">C++, Arduino, Custom PID Controller, IMU Sensor Fusion, Fusion 360</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">HARDWARE</div>
+                                <div class="spec_val">MPU6050 6-Axis IMU, Dual Stepper Motors, Arduino UNO, 3s Li-Ion Battery, LCD Screen</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">STATUS</div>
+                                <div class="spec_val">Control firmware complete; robot assembly & gain tuning next</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">FOR A DEEP LOOK</div>
+                                <a href="https://github.com/y-ishi-netizen/Morgana-Balancing-Robot" target="_blank" rel="noopener" class="spec_val">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel_bar">
+                        <span>Y// Projects</span>
+                        <span>02 / 04</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project3" class="diamonds">
+                <div class="project_shell">
+                    <div>
+                        <div class="panel_bar">
+                            <span>BIO LOG</span>
+                            <span class="status_live">[IN PROGRESS]</span>
+                        </div>
+                        <h2 class="panel_title">Western NC Microbiology Field Log</h2>
+                        <p class="panel_summary">
+                            I am currently conducting field sampling and microscopic cataloging of native freshwater microorganisms
+                            collected across Black Mountain and Montreat, NC. I am documenting behavior, images, and species characteristics.
+                        </p>
+                        <div class="spec_row">
+                            <div class="spec_card">
+                                <div class="spec_key">WHAT I USED</div>
+                                <div class="spec_val">OMAX M82E Series Lab Binocular Compound Microscope 40X-1000X Magnification</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">FIELD SITES</div>
+                                <div class="spec_val">Black Mountain & Montreat, NC (Swannanoa Valley)</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">FOR A DEEP LOOK</div>
+                                <div class="spec_val">[COMING SOON]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel_bar">
+                        <span>Y// Projects</span>
+                        <span>03 / 04</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project4" class="diamonds">
+                <div class="project_shell">
+                    <div>
+                        <div class="panel_bar">
+                            <span>BANGBOO</span>
+                            <span class="status_live">[PLANNING]</span>
+                        </div>
+                        <h2 class="panel_title">Bipedal Robot & Metal Motor Housings</h2>
+                        <p class="panel_summary">
+                            I am currently designing a bipedal robot that is based off of the Bangboo from Zenless Zone Zero. It will be trained to walk using reinforcement learning.
+                            I am also designing custom metal motor housings that will be used to house the motors and provide a rigid structure for the robot.
+                        </p>
+                        <div class="spec_row">
+                            <div class="spec_card">
+                                <div class="spec_key">WHAT I AM USING</div>
+                                <div class="spec_val">Fusion 360, Quasi Direct Drive motors, Raspberry Pi, MUJOCO, GYMNASIUM</div>
+                            </div>
+                            <div class="spec_card">
+                                <div class="spec_key">FOR A DEEP LOOK</div>
+                                <div class="spec_val">[COMING SOON]</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel_bar">
+                        <span>Y// Projects</span>
+                        <span>04 / 04</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
