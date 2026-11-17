@@ -24,6 +24,8 @@
             --text-dim: #525151;
             --text-bg-light: #ffffff;
             --accent-live: #00ff66;
+            --accent-working: #ffcc00;
+            --accent-not-started: #ff3300;
             --font-mono: 'IBM Plex Mono', monospace;
             --font-display: 'Alfa Slab One', serif;
         }
@@ -222,10 +224,23 @@
             font-size: 0.72rem;
             letter-spacing: 0.14em;
             color: var(--text-dim);
+            padding: 0 8px;
         }
 
         .status_live {
             color: var(--accent-live);
+            padding: 0 8px;
+        }
+
+        .status_working {
+            color: var(--accent-working);
+            padding: 0 8px;
+        }
+
+        .status_not_started {
+            color: var(--accent-not-started);
+            padding: 0 8px;
+
         }
 
         .panel_title {
@@ -233,6 +248,7 @@
             font-weight: 600;
             margin: 14px 0 10px;
             color: var(--text-main);
+            padding: 0 8px;
         }
 
         .panel_summary {
@@ -240,6 +256,7 @@
             font-size: 0.84rem;
             line-height: 1.75;
             color: var(--text-muted);
+            padding: 0 8px;
         }
 
         .spec_row {
@@ -267,6 +284,17 @@
             line-height: 1.55;
             color: var(--text-main);
         }
+
+        .animation {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width: 100%;
+            padding: 16px 0;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: var(--accent-live);
+        }
     </style>
 
 </head>
@@ -290,6 +318,9 @@
                 <p><span class="label">NAME =</span> <span class="val">Matthew Somritjinda</span></p>
                 <p><span class="label">STATUS =</span> <span class="val">AI developer, Researcher</span></p>
                 <p><span class="label">CURRENT PROJECT(s) =</span> <span class="val">Bio Log, Bangboo, Morgana Bot</span></p>
+            </div>
+                <div id="rei_stage">
+                    <div class="animation">REI 01</div>
             </div>
         </div>
 
@@ -356,7 +387,7 @@
                     <div>
                         <div class="panel_bar">
                             <span>MORGANA BOT</span>
-                            <span class="status_live">[Waiting for Hardware]</span>
+                            <span class="status_working">[Waiting for Hardware]</span>
                         </div>
                         <h2 class="panel_title">Self-Balancing Inverted Pendulum Robot</h2>
                         <p class="panel_summary">
@@ -396,7 +427,7 @@
                     <div>
                         <div class="panel_bar">
                             <span>BIO LOG</span>
-                            <span class="status_live">[IN PROGRESS]</span>
+                            <span class="status_working">[IN PROGRESS]</span>
                         </div>
                         <h2 class="panel_title">Western NC Microbiology Field Log</h2>
                         <p class="panel_summary">
@@ -430,7 +461,7 @@
                     <div>
                         <div class="panel_bar">
                             <span>BANGBOO</span>
-                            <span class="status_live">[PLANNING]</span>
+                            <span class="status_not_started">[PLANNING]</span>
                         </div>
                         <h2 class="panel_title">Bipedal Robot & Metal Motor Housings</h2>
                         <p class="panel_summary">
